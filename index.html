@@ -1240,25 +1240,28 @@
         window.addEventListener('load', () => {
             revealElements();
         });
+<body>
+    <!-- Your other content -->
+
+    <div id="footer-placeholder"></div> <!-- Placeholder where footer will go -->
+
+    <script>
+        // Create the footer section dynamically
+        const footer = document.createElement('section');
+        footer.id = 'genuine';
+        footer.className = 'section fade-in';
+
+        // Inner HTML of the footer
+        footer.innerHTML = `
+            <h2><i class="fas fa-shield-alt"></i> Genuine Website</h2>
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <p>© 2025 Yuva Sai Rithvik Sajja | All Rights Reserved</p>
+                <p>This is my <strong>genuine personal website</strong>. Any external copies or unauthorized reproductions are not valid.</p>
+                <p>Made with <i class="fas fa-heart" style="color: red;"></i> and dedication.</p>
+            </div>
+        `;
+
+        // Append footer to placeholder or body
+        document.getElementById('footer-placeholder').appendChild(footer);
     </script>
 </body>
-</html>
-                    I'm a passionate Computer Science student at <strong>VIT Chennai</strong> with expertise in software development, data analytics, and machine learning. Currently maintaining a <strong>CGPA of 8.84</strong>, I combine academic excellence with practical project experience.
-                </p>
-                <p>
-                    My recent internship at <strong>Infosys SpringBoard</strong> involved developing an NLP-based disaster response system, achieving 92% classification accuracy on crisis-related tweets. I have hands-on experience with <strong>MERN stack development</strong>, having built production-ready applications with scalable architectures.
-                </p>
-                <p>
-                    I'm passionate about creating technology solutions that solve real-world problems, from web applications to data analytics systems. Always eager to take on new challenges and learn cutting-edge technologies to make a meaningful impact.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section fade-in">
-        <h2><i class="fas fa-code"></i> Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3>Programming Languages</h3>
-                <p>
