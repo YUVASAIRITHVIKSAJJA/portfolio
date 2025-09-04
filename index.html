@@ -49,28 +49,29 @@
         .floating-shapes {
             position: absolute;
             border-radius: 50%;
-            animation: floatComplex 25s ease-in-out infinite;
+            background: linear-gradient(45deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.08));
+            animation: floatComplex 20s ease-in-out infinite;
         }
 
         .floating-shapes:nth-child(1) { 
-            width: 160px; height: 160px; top: 15%; left: 10%;
-            background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.25), rgba(37, 99, 235, 0.05), transparent 70%);
-            animation-delay: 0s; animation-duration: 20s;
+            width: 200px; height: 200px; top: 10%; left: 5%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.15), transparent 70%);
+            animation-delay: 0s; animation-duration: 25s;
         }
         .floating-shapes:nth-child(2) { 
-            width: 120px; height: 120px; top: 25%; right: 15%;
-            background: radial-gradient(circle at 60% 40%, rgba(6, 182, 212, 0.2), rgba(6, 182, 212, 0.04), transparent 70%);
-            animation-delay: 7s; animation-duration: 28s;
+            width: 150px; height: 150px; top: 20%; right: 10%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.12), transparent 70%);
+            animation-delay: 5s; animation-duration: 30s;
         }
         .floating-shapes:nth-child(3) { 
-            width: 140px; height: 140px; bottom: 25%; left: 18%;
-            background: radial-gradient(circle at 50% 60%, rgba(20, 184, 166, 0.18), rgba(20, 184, 166, 0.03), transparent 70%);
-            animation-delay: 14s; animation-duration: 24s;
+            width: 180px; height: 180px; bottom: 15%; left: 8%;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.1), transparent 70%);
+            animation-delay: 10s; animation-duration: 22s;
         }
         .floating-shapes:nth-child(4) { 
-            width: 100px; height: 100px; bottom: 40%; right: 20%;
-            background: radial-gradient(circle at 40% 70%, rgba(56, 189, 248, 0.15), rgba(56, 189, 248, 0.03), transparent 70%);
-            animation-delay: 21s; animation-duration: 32s;
+            width: 120px; height: 120px; bottom: 30%; right: 15%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08), transparent 70%);
+            animation-delay: 15s; animation-duration: 28s;
         }
 
         @keyframes floatComplex {
@@ -78,13 +79,13 @@
                 transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
             }
             25% { 
-                transform: translateY(-25px) translateX(15px) rotate(90deg) scale(1.03);
+                transform: translateY(-40px) translateX(30px) rotate(90deg) scale(1.1);
             }
             50% { 
-                transform: translateY(-12px) translateX(-12px) rotate(180deg) scale(0.97);
+                transform: translateY(-20px) translateX(-25px) rotate(180deg) scale(0.9);
             }
             75% { 
-                transform: translateY(18px) translateX(20px) rotate(270deg) scale(1.01);
+                transform: translateY(25px) translateX(35px) rotate(270deg) scale(1.05);
             }
         }
 
@@ -363,7 +364,6 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            cursor: pointer;
         }
 
         .download-btn:hover {
@@ -422,41 +422,17 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid var(--card-border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
-            transition: all 0.6s;
-        }
-
-        .skill-card:hover::before {
-            left: 100%;
         }
 
         .skill-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
-            border-color: rgba(37, 99, 235, 0.4);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
         }
 
         .skill-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
             color: var(--text-accent);
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover .skill-icon {
-            transform: scale(1.1) rotate(5deg);
-            color: var(--primary-blue);
         }
 
         .skill-card h3 {
@@ -466,100 +442,6 @@
 
         .skill-card p {
             color: var(--text-secondary);
-        }
-
-        /* Experience Section */
-        .experience-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: start;
-            margin-top: 3rem;
-        }
-
-        .experience-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .exp-visual {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan), var(--accent-teal));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            animation: experienceFloat 8s ease-in-out infinite;
-        }
-
-        @keyframes experienceFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-            33% { transform: translateY(-15px) rotate(5deg) scale(1.02); }
-            66% { transform: translateY(8px) rotate(-3deg) scale(0.98); }
-        }
-
-        .exp-visual::before {
-            content: '';
-            position: absolute;
-            top: -30%;
-            left: -30%;
-            width: 160%;
-            height: 160%;
-            background: conic-gradient(from 45deg, transparent, rgba(255,255,255,0.1), transparent, rgba(255,255,255,0.1), transparent);
-            animation: rotate 15s linear infinite;
-        }
-
-        .timeline {
-            position: relative;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin: 2rem 0;
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--card-border);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
-        }
-
-        .timeline-item h3 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-        }
-
-        .timeline-item h4 {
-            color: var(--text-accent);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .timeline-date {
-            color: var(--accent-cyan);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-item ul {
-            color: var(--text-secondary);
-            padding-left: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .timeline-item ul li {
-            margin-bottom: 0.5rem;
         }
 
         /* Projects Grid */
@@ -590,26 +472,6 @@
 
         .project-body {
             padding: 2rem;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .project-features {
-            margin: 1.5rem 0;
-        }
-
-        .project-features ul {
-            color: var(--text-secondary);
-            padding-left: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .project-features ul li {
-            margin-bottom: 0.8rem;
         }
 
         .project-links {
@@ -649,6 +511,57 @@
             border-radius: 16px;
             font-size: 0.8rem;
             border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--accent-cyan));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            width: 45%;
+            position: relative;
+            border: 1px solid var(--card-border);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 55%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            border: 4px solid var(--text-primary);
         }
 
         /* Certifications */
@@ -766,14 +679,19 @@
         @media (max-width: 1024px) {
             .hero h1 { font-size: 3rem; }
             .about-content { grid-template-columns: 1fr; text-align: center; }
-            .experience-content { grid-template-columns: 1fr; }
             .profile-img { width: 250px; height: 250px; }
-            .exp-visual { width: 280px; height: 280px; font-size: 4.5rem; }
         }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
+            .timeline::before { left: 20px; }
+            .timeline-content { 
+                width: calc(100% - 60px); 
+                margin-left: 60px !important; 
+                margin-right: 0 !important; 
+            }
+            .timeline-dot { left: 20px; }
             .cta-buttons { flex-direction: column; align-items: center; }
             .projects-grid { grid-template-columns: 1fr; }
             .skills-grid { grid-template-columns: 1fr; }
@@ -825,7 +743,7 @@
             <ul class="nav-links">
                 <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#skills"><i class="fas fa-code"></i> Technical Skills</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
                 <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
                 <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
                 <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
@@ -843,7 +761,7 @@
         <div class="hero-content">
             <h1>Yuva Sai Rithvik Sajja</h1>
             <p class="subtitle">Final-year Computer Science Student | <span class="typing-text" id="typingText">Software Engineer</span></p>
-            <p class="description">Passionate about creating innovative solutions in software development, data analytics, and machine learning. Building scalable applications that make a meaningful impact.</p>
+            <p class="description">Passionate about creating innovative solutions in software development, data analytics, and IoT systems. Building scalable applications and smart hardware solutions that make a meaningful impact.</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">
                     <i class="fas fa-rocket"></i> View Projects
@@ -866,7 +784,7 @@
                     <i class="fas fa-user-graduate"></i>
                 </div>
                 <div class="download-buttons">
-                    <a href="https://drive.google.com/file/d/1IorXB5r-d1A3UEcqd0M8Ckipzd_kjI84/view?usp=sharing" target="_blank" class="download-btn">
+                    <a href="#" class="download-btn" onclick="downloadResume()">
                         <i class="fas fa-file-download"></i> Download Resume
                     </a>
                     <a href="https://www.linkedin.com/in/yuva-sai-rithvik-sajja" target="_blank" class="download-btn">
@@ -885,6 +803,25 @@
                 </div>
             </div>
             <div class="about-text">
+                <p>
+                    I'm a passionate Computer Science student at <strong>VIT Chennai</strong> with expertise in software development, data analytics, and IoT systems. Currently maintaining a <strong>CGPA of 8.84</strong>, I combine academic excellence with practical project experience.
+                </p>
+                <p>
+                    My recent internship at <strong>Infosys SpringBoard</strong> involved developing an NLP-based disaster response system. I have hands-on experience with <strong>MERN stack development</strong>, having built production-ready applications and innovative hardware solutions.
+                </p>
+                <p>
+                    I'm passionate about creating technology solutions that solve real-world problems, from web applications to IoT systems for safety and automation. Always eager to take on new challenges and learn cutting-edge technologies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section fade-in">
+        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Programming Languages</h3>
                 <p>Java, Python, SQL, JavaScript with strong problem-solving skills</p>
             </div>
             <div class="skill-card">
@@ -896,6 +833,11 @@
                 <div class="skill-icon"><i class="fas fa-globe"></i></div>
                 <h3>Web Development</h3>
                 <p>React.js, Node.js, Express.js, MongoDB - Full MERN Stack</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                <h3>IoT & Hardware</h3>
+                <p>Arduino, Sensors, GPS, Real-time monitoring systems</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon"><i class="fas fa-brain"></i></div>
@@ -912,23 +854,17 @@
 
     <section id="experience" class="section fade-in">
         <h2><i class="fas fa-briefcase"></i> Experience</h2>
-        <div class="experience-content">
-            <div class="experience-image">
-                <div class="exp-visual">
-                    <i class="fas fa-code"></i>
-                </div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
                     <h3><i class="fas fa-code"></i> Software Development Intern</h3>
                     <h4>Infosys SpringBoard</h4>
-                    <p class="timeline-date">October 2024 – December 2024</p>
-                    <ul>
-                        <li><strong>Built NLP-based disaster tweet analyzer</strong> achieving 92% classification accuracy on crisis-related tweets for faster emergency response</li>
-                        <li><strong>Developed comprehensive text preprocessing modules</strong> including tokenization, lemmatization, and stopword removal that reduced noise in datasets of 11,000+ tweets</li>
-                        <li><strong>Integrated ML pipeline into prototype dashboard</strong> enabling real-time tweet monitoring and classification for crisis communication</li>
-                        <li><strong>Conducted exploratory data analysis</strong> identifying key disaster-related keywords and language patterns used during emergencies</li>
-                        <li><strong>Collaborated with cross-functional teams</strong> to deliver production-ready solutions for disaster response systems</li>
+                    <p style="color: var(--text-accent); margin: 1rem 0;">October 2024 – December 2024</p>
+                    <ul style="line-height: 1.8;">
+                        <li>Built NLP-based disaster tweet analyzer for crisis communication</li>
+                        <li>Developed text preprocessing modules for large tweet datasets</li>
+                        <li>Integrated ML pipeline into dashboard for real-time monitoring</li>
                     </ul>
                 </div>
             </div>
@@ -944,15 +880,12 @@
                     <p style="color: var(--text-accent);">June 2024 – September 2024</p>
                 </div>
                 <div class="project-body">
-                    <p class="project-description">Full-stack MERN application for temple booking services with secure authentication and scalable architecture.</p>
-                    <div class="project-features">
-                        <ul>
-                            <li>Built REST APIs with Node.js & Express.js for authentication and bookings</li>
-                            <li>Designed MongoDB schemas scaling to 2,000+ booking records</li>
-                            <li>Achieved production-ready score of 90.8/100 with JWT security</li>
-                            <li>Integrated React frontend with responsive design</li>
-                        </ul>
-                    </div>
+                    <p>Full-stack MERN application for temple booking services with secure authentication and scalable architecture.</p>
+                    <ul style="margin: 1rem 0; line-height: 1.6;">
+                        <li>Built backend with Node.js & Express.js, delivering REST APIs</li>
+                        <li>Designed secure MongoDB schemas scaling to 2,000+ records</li>
+                        <li>Achieved production-ready score of 90.8/100</li>
+                    </ul>
                     <div class="project-links">
                         <a href="https://github.com/YUVASAIRITHVIKSAJJA/Darshanease" target="_blank" rel="noopener noreferrer" class="project-link">
                             <i class="fab fa-github"></i> GitHub
@@ -966,7 +899,6 @@
                         <span class="tech-tag">Node.js</span>
                         <span class="tech-tag">MongoDB</span>
                         <span class="tech-tag">Express.js</span>
-                        <span class="tech-tag">JWT</span>
                     </div>
                 </div>
             </div>
@@ -977,15 +909,12 @@
                     <p style="color: var(--text-accent);">March 2024 – June 2024</p>
                 </div>
                 <div class="project-body">
-                    <p class="project-description">Real-time air cargo routing platform with weather adaptation and dynamic optimization capabilities.</p>
-                    <div class="project-features">
-                        <ul>
-                            <li>Developed with React and TypeScript achieving 94% route accuracy</li>
-                            <li>Implemented weather-adaptive routing with sub-second recalculations</li>
-                            <li>Created interactive SVG-based route visualizations</li>
-                            <li>Built modular architecture with Redux state management</li>
-                        </ul>
-                    </div>
+                    <p>Real-time air cargo routing platform with dynamic optimization and weather adaptation capabilities.</p>
+                    <ul style="margin: 1rem 0; line-height: 1.6;">
+                        <li>Developed platform with React and TypeScript</li>
+                        <li>Implemented weather-adaptive routing algorithm</li>
+                        <li>Created interactive route visualizations</li>
+                    </ul>
                     <div class="project-links">
                         <a href="https://github.com/YUVASAIRITHVIKSAJJA/Smart-Airlift-Router" target="_blank" rel="noopener noreferrer" class="project-link">
                             <i class="fab fa-github"></i> GitHub
@@ -999,7 +928,6 @@
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Algorithms</span>
                         <span class="tech-tag">Weather API</span>
-                        <span class="tech-tag">Redux</span>
                     </div>
                 </div>
             </div>
@@ -1010,19 +938,23 @@
                     <p style="color: var(--text-accent);">Hardware Project</p>
                 </div>
                 <div class="project-body">
-                    <p class="project-description">Automated railway safety system using GPS and sensors for track monitoring and hazard detection.</p>
-                    <div class="project-features">
-                        <ul>
-                            <li>GPS-based track condition monitoring with precise location tracking</li>
-                            <li>Real-time detection for fire, floods, track breaks, and train tilts</li>
-                            <li>Automated alerting system for immediate authority notification</li>
-                            <li>Enhanced railway safety through continuous monitoring</li>
-                        </ul>
+                    <p>Automated Railway Safety System using GPS and sensors for comprehensive track monitoring and hazard detection.</p>
+                    <ul style="margin: 1rem 0; line-height: 1.6;">
+                        <li>Developed GPS-based railway track condition monitoring</li>
+                        <li>Implemented real-time detection for fire, floods, and track breaks</li>
+                        <li>Created efficient alerting mechanism for authorities</li>
+                        <li>Improved railway safety through automated monitoring</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/YUVASAIRITHVIKSAJJA" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
                     </div>
                     <div class="tech-stack">
                         <span class="tech-tag">Arduino</span>
                         <span class="tech-tag">GPS</span>
                         <span class="tech-tag">Sensors</span>
+                        <span class="tech-tag">IoT</span>
                         <span class="tech-tag">Safety Systems</span>
                     </div>
                 </div>
@@ -1030,23 +962,27 @@
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3><i class="fas fa-hard-hat"></i> Safety Shell - Mining Helmet</h3>
+                    <h3><i class="fas fa-hard-hat"></i> Safety Shell - IoT Mining Helmet</h3>
                     <p style="color: var(--text-accent);">Team Project</p>
                 </div>
                 <div class="project-body">
-                    <p class="project-description">IoT-Enhanced safety helmet for mining personnel with environmental monitoring and emergency detection.</p>
-                    <div class="project-features">
-                        <ul>
-                            <li>O2/CO2 gas sensors for air quality monitoring</li>
-                            <li>Temperature and fire detection with real-time alerts</li>
-                            <li>Voice recording and emergency detection system</li>
-                            <li>Wireless data transmission to monitoring centers</li>
-                        </ul>
+                    <p>IoT-Enhanced Safety Helmet for Mining Personnel with real-time environmental monitoring and hazard detection.</p>
+                    <ul style="margin: 1rem 0; line-height: 1.6;">
+                        <li>Integrated O2/CO2 gas sensors for air quality monitoring</li>
+                        <li>Temperature and fire detection sensor implementation</li>
+                        <li>Centralized voice recording and emergency detection</li>
+                        <li>Real-time data transmission to monitoring systems</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/YUVASAIRITHVIKSAJJA" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
                     </div>
                     <div class="tech-stack">
-                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">IoT</span>
                         <span class="tech-tag">Gas Sensors</span>
                         <span class="tech-tag">Temperature Sensors</span>
+                        <span class="tech-tag">ESP32</span>
                         <span class="tech-tag">Emergency Systems</span>
                     </div>
                 </div>
@@ -1062,8 +998,8 @@
                 <h3>Data Analytics Program</h3>
                 <p><strong>Launched Global</strong></p>
                 <p class="cert-id">ID: LEDCC4803</p>
-                <p>Comprehensive data analytics certification covering statistical analysis, data visualization, and business intelligence tools</p>
-                <a href="https://drive.google.com/file/d/1cvH7SYTgs-llOT6oMyQaKDSO1TreHtju/view?usp=sharing" target="_blank" class="download-btn" style="margin-top: 1rem; display: inline-block;">
+                <p>Comprehensive data analytics certification covering statistical analysis and visualization</p>
+                <a href="#" class="download-btn" onclick="downloadCertificate('data-analytics')" style="margin-top: 1rem; display: inline-block;">
                     <i class="fas fa-download"></i> Download
                 </a>
             </div>
@@ -1073,8 +1009,8 @@
                 <h3>Disaster Tweet Analyzer Internship</h3>
                 <p><strong>Infosys SpringBoard</strong></p>
                 <p class="cert-id">Issued: January 9, 2025</p>
-                <p>Advanced NLP-based crisis communication system development with 92% classification accuracy</p>
-                <a href="https://drive.google.com/file/d/1astTBH3z1UKBWUDvGsdk-dUox7yhTFBt/view?usp=sharing" target="_blank" class="download-btn" style="margin-top: 1rem; display: inline-block;">
+                <p>Advanced NLP-based crisis communication system development</p>
+                <a href="#" class="download-btn" onclick="downloadCertificate('infosys-internship')" style="margin-top: 1rem; display: inline-block;">
                     <i class="fas fa-download"></i> Download
                 </a>
             </div>
@@ -1084,8 +1020,8 @@
                 <h3>MongoDB Node.js Developer</h3>
                 <p><strong>SmartBridge & MongoDB</strong></p>
                 <p class="cert-id">ID: MDBfvshcpmewx</p>
-                <p>Backend development with Node.js and MongoDB integration, database design and optimization</p>
-                <a href="https://drive.google.com/file/d/1N7x1QIe88T0QOvt333dtxQbyo1k5zup7/view?usp=sharing" target="_blank" class="download-btn" style="margin-top: 1rem; display: inline-block;">
+                <p>Backend development with Node.js and MongoDB integration</p>
+                <a href="#" class="download-btn" onclick="downloadCertificate('nodejs-mongodb')" style="margin-top: 1rem; display: inline-block;">
                     <i class="fas fa-download"></i> Download
                 </a>
             </div>
@@ -1095,8 +1031,8 @@
                 <h3>MERN Stack Development</h3>
                 <p><strong>SmartInternz</strong></p>
                 <p class="cert-id">ID: CC-FSD-2024-4861</p>
-                <p>Full-stack web development with MERN technologies, project work completion and deployment</p>
-                <a href="https://drive.google.com/file/d/1RdaC5kdqEJT8hS9VO8-V-rV4yYJ7Ka6A/view?usp=sharing" target="_blank" class="download-btn" style="margin-top: 1rem; display: inline-block;">
+                <p>Full-stack web development with MERN technologies</p>
+                <a href="#" class="download-btn" onclick="downloadCertificate('mern-stack')" style="margin-top: 1rem; display: inline-block;">
                     <i class="fas fa-download"></i> Download
                 </a>
             </div>
@@ -1106,8 +1042,8 @@
                 <h3>Introduction to SQL</h3>
                 <p><strong>University of Michigan</strong></p>
                 <p class="cert-id">ID: WC56MFV R7KF9</p>
-                <p>Database fundamentals, query optimization, and structured query language proficiency</p>
-                <a href="https://drive.google.com/file/d/1ZgoOwkL3pCT_Y6I_dQptxnEUVUdRDcHB/view?usp=sharing" target="_blank" class="download-btn" style="margin-top: 1rem; display: inline-block;">
+                <p>Database fundamentals and query optimization</p>
+                <a href="#" class="download-btn" onclick="downloadCertificate('sql-michigan')" style="margin-top: 1rem; display: inline-block;">
                     <i class="fas fa-download"></i> Download
                 </a>
             </div>
@@ -1159,15 +1095,6 @@
         </div>
     </section>
 
-    <section id="genuine" class="section fade-in">
-        <h2><i class="fas fa-shield-alt"></i> Genuine Website</h2>
-        <div class="genuine-content" style="text-align: center; max-width: 900px; margin: 0 auto;">
-            <p>© 2025 Yuva Sai Rithvik Sajja | All Rights Reserved</p>
-            <p>This is my <strong>genuine personal website</strong>. Any external copies or unauthorized reproductions are not valid.</p>
-            <p>Made with <i class="fas fa-heart" style="color: var(--accent-cyan);"></i> and dedication.</p>
-        </div>
-    </section>
-
     <script>
         // Typing animation
         const typingElement = document.getElementById('typingText');
@@ -1175,7 +1102,7 @@
             'Software Engineer', 
             'Data Analyst', 
             'Full-Stack Developer', 
-            'ML Engineer',
+            'IoT Developer',
             'Problem Solver'
         ];
         let roleIndex = 0;
@@ -1250,6 +1177,263 @@
             });
         });
 
+        // Download resume function
+        function downloadResume() {
+            const resumeContent = `SAJJA YUVA SAI RITHVIK
+Phone: +91 7702389788 | Email: syuvasairithvik@gmail.com
+LinkedIn: yuva-sai-rithvik-sajja | GitHub: YUVASAIRITHVIKSAJJA
+
+ABOUT ME
+Aspiring Computer Science professional from VIT Chennai, passionate about software development and data analytics.
+I enjoy exploring new technologies, tackling real-world challenges, and creating solutions that drive meaningful impact.
+
+EDUCATION
+Vellore Institute of Technology, Chennai (Sept 2022 – June 2026)
+Bachelor of Technology in Computer Science and Engineering
+CGPA: 8.84 | Chennai, Tamil Nadu
+
+Sri Chaitanya Junior College (2020 – 2022)
+Senior Secondary (Class XI–XII), MPC Stream
+Percentage: 97.8% | Khammam, Telangana
+• Achieved perfect scores (100%) in Mathematics, Physics, and Chemistry
+
+PROFESSIONAL EXPERIENCE
+Software Development Intern - Infosys SpringBoard (Oct 2024 – Dec 2024)
+• Built NLP-based disaster tweet analyzer achieving high classification accuracy
+• Developed text preprocessing modules for large tweet datasets
+• Integrated ML pipeline into prototype dashboard for real-time monitoring
+
+PROJECTS
+DarshanEase – Temple Booking System (MERN) | Jun 2024 – Sep 2024
+• Built backend with Node.js & Express.js, delivering REST APIs
+• Designed secure MongoDB schemas scaling to 2,000+ booking records
+• Achieved production-ready score of 90.8/100
+• GitHub: github.com/YUVASAIRITHVIKSAJJA/Darshanease
+• Live: darshanease.vercel.app
+
+Smart Airlift Router – Dynamic Route Optimization | Mar 2024 – Jun 2024
+• Developed real-time air cargo routing platform with React and TypeScript
+• Implemented weather-adaptive routing algorithm
+• Created interactive route visualizations and predictive suggestions
+• GitHub: github.com/YUVASAIRITHVIKSAJJA/Smart-Airlift-Router
+• Live: smart-router.vercel.app
+
+Rail Guard Precision – Automated Railway Safety | Hardware Project
+• Developed automated system using GPS and sensors for track monitoring
+• Implemented real-time detection for fire, floods, track breaks, and train tilts
+• Created efficient alerting mechanism to notify authorities of hazards
+• Improved Railway Safety through automated monitoring and quick response
+
+Safety Shell - IoT Mining Helmet | Team Project
+• Developed IoT-enhanced safety helmet for mining personnel
+• Integrated O2/CO2 gas sensors, temperature sensors, and fire detection
+• Implemented centralized voice recording and emergency detection system
+• Real-time data transmission to monitoring systems for rapid response
+
+TECHNICAL SKILLS
+Languages: Java, Python, SQL, JavaScript
+Data Analysis & Visualization: Excel, Power BI, Pandas, NumPy, Matplotlib, Seaborn
+Web Technologies: React, Node.js, Express, MongoDB
+IoT & Hardware: Arduino, Sensors, GPS, Real-time monitoring systems
+Machine Learning: NLP, Classification, Data Preprocessing
+Tools: Git, VS Code, IntelliJ, Database Management
+
+CERTIFICATIONS
+• Data Analytics Program - Launched Global (ID: LEDCC4803)
+• Disaster Tweet Analyzer Internship - Infosys SpringBoard (Jan 2025)
+• MongoDB Node.js Developer Path - SmartBridge (ID: MDBfvshcpmewx)
+• MERN Stack Development - SmartInternz (ID: CC-FSD-2024-4861)
+• Introduction to SQL - University of Michigan (ID: WC56MFV R7KF9)`;
+
+            // Create and download the resume file
+            const element = document.createElement('a');
+            const file = new Blob([resumeContent], { type: 'text/plain' });
+            element.href = URL.createObjectURL(file);
+            element.download = 'Yuva_Sai_Rithvik_Sajja_Resume.txt';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+            
+            showNotification('Resume downloaded successfully!', 'success');
+        }
+
+        // Download certificate function
+        function downloadCertificate(certType) {
+            const certificates = {
+                'data-analytics': {
+                    content: `CERTIFICATE OF COMPLETION
+
+Sajja Yuva Sai Rithvik
+Certificate ID: LEDCC4803
+
+This is to certify that the above named individual has successfully completed
+the Data Analytics Program offered by Launched Global.
+
+The program covered:
+- Statistical Analysis and Data Interpretation
+- Data Visualization Techniques
+- Business Intelligence Tools
+- Advanced Analytics Methodologies
+
+This certification demonstrates proficiency in data analytics principles
+and practical application of analytical tools and techniques.
+
+Issued by: Launched Global
+Date: 2024`
+                },
+                'infosys-internship': {
+                    content: `INTERNSHIP COMPLETION CERTIFICATE
+
+YUVA SAI RITHVIK Sajja
+
+This certificate is presented to the above named individual for actively
+participating and completing the mandatory assignment related to
+
+Internship 5.0 (B1) - Disaster Tweet Analyzer: Crisis Communication using NLP
+
+Key Achievements:
+- Developed NLP-based disaster tweet classification system
+- Implemented text preprocessing and feature extraction modules
+- Built real-time monitoring dashboard for crisis communication
+- Demonstrated proficiency in machine learning and natural language processing
+
+Conducted from: October 3, 2024 to December 5, 2024
+Issued on: Thursday, January 9, 2025
+
+Issuer: Infosys SpringBoard
+Verification: Available at https://verify.onwingspan.com`
+                },
+                'nodejs-mongodb': {
+                    content: `MONGODB NODE.JS DEVELOPER PATH CERTIFICATE
+
+Sajja Yuva Sai Rithvik (22BCE1430)
+Certificate ID: MDBfvshcpmewx
+
+This certifies that the above individual has successfully completed the
+MongoDB Node.js Developer Path for SmartBridge
+
+Course Content:
+- Node.js fundamentals and advanced concepts
+- MongoDB database design and optimization
+- RESTful API development and integration
+- Backend security and authentication
+- Database performance tuning and best practices
+
+Completion Date: January 7, 2024
+Issued by: SmartBridge in partnership with MongoDB University
+
+This certification validates expertise in backend development using
+Node.js with MongoDB database integration.`
+                },
+                'mern-stack': {
+                    content: `CERTIFICATE OF COMPLETION
+
+It is hereby certified that Sajja Yuva Sai Rithvik (22BCE1430) has successfully
+completed the Credit Course on Full Stack Developer - MERN Stack from
+June 2024 to July 2024 and fulfilled the project work requirements.
+
+Course Components:
+- MongoDB: Database design and management
+- Express.js: Server-side framework development
+- React.js: Frontend user interface development
+- Node.js: Backend runtime environment
+
+Project Work:
+- Built complete full-stack web applications
+- Implemented user authentication and authorization
+- Deployed applications with proper CI/CD practices
+- Demonstrated proficiency in modern web development
+
+Certificate ID: CC-FSD-2024-4861
+Issued Date: August 09, 2024
+
+Amarendar Katkam
+Founder & CEO, SmartBridge
+
+In partnership with SmartInternz`
+                },
+                'sql-michigan': {
+                    content: `UNIVERSITY OF MICHIGAN
+COURSERA CERTIFICATE
+
+SAJJA YUVA SAI RITHVIK
+
+has successfully completed
+
+Introduction to Structured Query Language (SQL)
+
+An online non-credit course authorized by University of Michigan
+and offered through Coursera
+
+Course Content:
+- SQL syntax and fundamental concepts
+- Database design principles
+- Query optimization techniques
+- Data manipulation and analysis
+- Relational database management
+
+Completion Date: March 13, 2024
+
+Charles Severance
+Clinical Professor, School of Information
+University of Michigan
+
+Certificate ID: WC56MFV R7KF9
+Verify at: https://coursera.org/verify/WC56MFV R7KF9
+
+Coursera has confirmed the identity of this individual and
+their participation in the course.`
+                }
+            };
+
+            const cert = certificates[certType];
+            if (cert) {
+                const element = document.createElement('a');
+                const file = new Blob([cert.content], { type: 'text/plain' });
+                element.href = URL.createObjectURL(file);
+                element.download = `${certType.replace(/-/g, '_')}_certificate_yuva_sai_rithvik.txt`;
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+                
+                showNotification('Certificate downloaded successfully!', 'success');
+            }
+        }
+
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-weight: 500;
+                animation: slideIn 0.5s ease;
+                max-width: 300px;
+            `;
+            
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 3000);
+        }
+
         // Event listeners
         window.addEventListener('scroll', () => {
             updateScrollProgress();
@@ -1260,3 +1444,22 @@
         window.addEventListener('load', () => {
             revealElements();
         });
+
+        // Add slide-in animation style
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(300px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
