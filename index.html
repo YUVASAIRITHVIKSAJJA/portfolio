@@ -422,17 +422,41 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transition: all 0.6s;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
         }
 
         .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
+            border-color: rgba(37, 99, 235, 0.4);
         }
 
         .skill-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
             color: var(--text-accent);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--primary-blue);
         }
 
         .skill-card h3 {
@@ -801,7 +825,7 @@
             <ul class="nav-links">
                 <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Technical Skills</a></li>
                 <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
                 <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
                 <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
@@ -834,7 +858,6 @@
         </div>
     </section>
 
-    
     <section id="about" class="section about fade-in">
         <h2><i class="fas fa-user"></i> About Me</h2>
         <div class="about-content">
@@ -843,7 +866,7 @@
                     <i class="fas fa-user-graduate"></i>
                 </div>
                 <div class="download-buttons">
-                    <a href="#" class="download-btn" onclick="downloadResume()">
+                    <a href="https://drive.google.com/file/d/1IorXB5r-d1A3UEcqd0M8Ckipzd_kjI84/view?usp=sharing" target="_blank" class="download-btn">
                         <i class="fas fa-file-download"></i> Download Resume
                     </a>
                     <a href="https://www.linkedin.com/in/yuva-sai-rithvik-sajja" target="_blank" class="download-btn">
@@ -861,19 +884,7 @@
                     </div>
                 </div>
             </div>
-            <div class="about-text">
-                <p>
-                    I'm a passionate Computer Science student at <strong>VIT Chennai</strong> with expertise in software development, data analytics, and IoT systems. Currently maintaining a <strong>CGPA of 8.84</strong>, I combine academic excellence with practical project experience.
-                </p>
-                <p>
-                    My recent internship at <strong>Infosys SpringBoard</strong> involved developing an NLP-based disaster response system. I have hands-on experience with <strong>MERN stack development</strong>, having built production-ready applications and innovative hardware solutions.
-                </p>
-                <p>
-                    I'm passionate about creating technology solutions that solve real-world problems, from web applications to IoT systems for safety and automation. Always eager to take on new challenges and learn cutting-edge technologies.
-                </p>
-            </div>
-        </div>
-    </section>
+            </section>
 
     <section id="skills" class="section fade-in">
         <h2><i class="fas fa-code"></i> Technical Skills</h2>
@@ -910,7 +921,6 @@
             </div>
         </div>
     </section>
-
     <section id="experience" class="section fade-in">
         <h2><i class="fas fa-briefcase"></i> Experience</h2>
         <div class="experience-content">
@@ -945,15 +955,13 @@
                     <p style="color: var(--text-accent);">June 2024 – September 2024</p>
                 </div>
                 <div class="project-body">
-                    <p class="project-description">Comprehensive full-stack MERN application for temple booking services with secure authentication, scalable architecture, and production-ready performance delivering seamless user experience.</p>
+                    <p class="project-description">Full-stack MERN application for temple booking services with secure authentication and scalable architecture.</p>
                     <div class="project-features">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.8rem;">Key Features & Achievements:</h4>
                         <ul>
-                            <li><strong>Backend Development:</strong> Built robust backend with Node.js & Express.js, delivering REST APIs for authentication, bookings, and temple services with comprehensive error handling</li>
-                            <li><strong>Database Architecture:</strong> Designed secure MongoDB schemas to manage users, admins, and organizers, scaling to 2,000+ booking records with optimized query performance</li>
-                            <li><strong>Frontend Integration:</strong> Integrated responsive React frontend with backend services, implementing real-time booking updates and user-friendly interface</li>
-                            <li><strong>Production Deployment:</strong> Achieved production-ready score of 90.8/100 with proper deployment, security measures, and performance optimization</li>
-                            <li><strong>Security Features:</strong> Implemented JWT-based authentication, input validation, and secure API endpoints following industry best practices</li>
+                            <li>Built REST APIs with Node.js & Express.js for authentication and bookings</li>
+                            <li>Designed MongoDB schemas scaling to 2,000+ booking records</li>
+                            <li>Achieved production-ready score of 90.8/100 with JWT security</li>
+                            <li>Integrated React frontend with responsive design</li>
                         </ul>
                     </div>
                     <div class="project-links">
@@ -970,7 +978,6 @@
                         <span class="tech-tag">MongoDB</span>
                         <span class="tech-tag">Express.js</span>
                         <span class="tech-tag">JWT</span>
-                        <span class="tech-tag">Vercel</span>
                     </div>
                 </div>
             </div>
@@ -981,16 +988,13 @@
                     <p style="color: var(--text-accent);">March 2024 – June 2024</p>
                 </div>
                 <div class="project-body">
-                    <p class="project-description">Advanced real-time air cargo routing platform with dynamic optimization and weather adaptation capabilities, featuring comprehensive analysis and implementation documented in detailed research paper.</p>
+                    <p class="project-description">Real-time air cargo routing platform with weather adaptation and dynamic optimization capabilities.</p>
                     <div class="project-features">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.8rem;">Technical Implementation:</h4>
                         <ul>
-                            <li><strong>Dynamic Route Optimization:</strong> Developed platform with React and TypeScript achieving sub-second recalculations under changing conditions with 94% accuracy in optimal route selection</li>
-                            <li><strong>Weather-Adaptive Algorithm:</strong> Implemented sophisticated routing algorithm considering weather conditions, distance, fuel consumption, and operational costs with real-time adaptation capabilities</li>
-                            <li><strong>Interactive Visualizations:</strong> Created SVG-based route mapping with custom React components for interactive elements and predictive suggestions improving airlift planning efficiency</li>
-                            <li><strong>Modular Architecture:</strong> Built scalable system with Route Graph Manager, Weather Monitoring System, Route Optimization Engine, and User Interface Layer</li>
-                            <li><strong>Performance Optimization:</strong> Implemented caching, priority queues, and parallel processing achieving optimal performance for large-scale operations</li>
-                            <li><strong>Research Documentation:</strong> Authored comprehensive research paper analyzing system architecture, methodology, and performance with literature review and future work recommendations</li>
+                            <li>Developed with React and TypeScript achieving 94% route accuracy</li>
+                            <li>Implemented weather-adaptive routing with sub-second recalculations</li>
+                            <li>Created interactive SVG-based route visualizations</li>
+                            <li>Built modular architecture with Redux state management</li>
                         </ul>
                     </div>
                     <div class="project-links">
@@ -1006,7 +1010,6 @@
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Algorithms</span>
                         <span class="tech-tag">Weather API</span>
-                        <span class="tech-tag">SVG</span>
                         <span class="tech-tag">Redux</span>
                     </div>
                 </div>
@@ -1018,15 +1021,13 @@
                     <p style="color: var(--text-accent);">Hardware Project</p>
                 </div>
                 <div class="project-body">
-                    <p class="project-description">Comprehensive automated railway safety system using GPS and multiple sensors for real-time track monitoring and hazard detection, enhancing railway safety through intelligent monitoring.</p>
+                    <p class="project-description">Automated railway safety system using GPS and sensors for track monitoring and hazard detection.</p>
                     <div class="project-features">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.8rem;">System Features:</h4>
                         <ul>
-                            <li><strong>GPS-Based Tracking:</strong> Developed precise railway track condition monitoring system using GPS technology for accurate location-based hazard detection</li>
-                            <li><strong>Multi-Hazard Detection:</strong> Implemented real-time detection capabilities for fire, floods, track breaks, and train tilts using integrated sensor network</li>
-                            <li><strong>Alert System:</strong> Created efficient automated alerting mechanism to notify authorities instantly upon hazard detection for rapid response</li>
-                            <li><strong>Safety Enhancement:</strong> Improved railway safety through continuous automated monitoring reducing response time to critical situations</li>
-                            <li><strong>Hardware Integration:</strong> Designed robust hardware solution combining multiple sensor types with reliable data transmission capabilities</li>
+                            <li>GPS-based track condition monitoring with precise location tracking</li>
+                            <li>Real-time detection for fire, floods, track breaks, and train tilts</li>
+                            <li>Automated alerting system for immediate authority notification</li>
+                            <li>Enhanced railway safety through continuous monitoring</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
@@ -1034,7 +1035,6 @@
                         <span class="tech-tag">GPS</span>
                         <span class="tech-tag">Sensors</span>
                         <span class="tech-tag">Safety Systems</span>
-                        <span class="tech-tag">Real-time Monitoring</span>
                     </div>
                 </div>
             </div>
@@ -1045,23 +1045,20 @@
                     <p style="color: var(--text-accent);">Team Project</p>
                 </div>
                 <div class="project-body">
-                    <p class="project-description">Advanced IoT-Enhanced Safety Helmet designed specifically for mining personnel with comprehensive environmental monitoring and emergency detection capabilities for hazardous mining environments.</p>
+                    <p class="project-description">IoT-Enhanced safety helmet for mining personnel with environmental monitoring and emergency detection.</p>
                     <div class="project-features">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.8rem;">Safety Features:</h4>
                         <ul>
-                            <li><strong>Gas Monitoring:</strong> Integrated O2/CO2 gas sensors for continuous air quality monitoring detecting dangerous gas concentration levels in real-time</li>
-                            <li><strong>Environmental Sensors:</strong> Temperature and fire detection sensor implementation providing early warning systems for extreme environmental conditions</li>
-                            <li><strong>Emergency Detection:</strong> Centralized voice recording and emergency detection system enabling immediate distress signal transmission to monitoring centers</li>
-                            <li><strong>Real-time Communication:</strong> Implemented wireless data transmission to centralized monitoring systems for continuous personnel safety tracking</li>
-                            <li><strong>Durability Design:</strong> Built rugged helmet design suitable for harsh mining environments with reliable sensor performance under extreme conditions</li>
+                            <li>O2/CO2 gas sensors for air quality monitoring</li>
+                            <li>Temperature and fire detection with real-time alerts</li>
+                            <li>Voice recording and emergency detection system</li>
+                            <li>Wireless data transmission to monitoring centers</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
+                        <span class="tech-tag">ESP32</span>
                         <span class="tech-tag">Gas Sensors</span>
                         <span class="tech-tag">Temperature Sensors</span>
-                        <span class="tech-tag">ESP32</span>
                         <span class="tech-tag">Emergency Systems</span>
-                        <span class="tech-tag">Mining Safety</span>
                     </div>
                 </div>
             </div>
@@ -1173,6 +1170,13 @@
         </div>
     </section>
 
+        <div class="genuine-content" style="text-align: center; max-width: 900px; margin: 0 auto;">
+            <p>© 2025 Yuva Sai Rithvik Sajja | All Rights Reserved</p>
+            <p>This is my <strong>genuine personal website</strong>. Any external copies or unauthorized reproductions are not valid.</p>
+            <p>Made with <i class="fas fa-heart" style="color: var(--accent-cyan);"></i> and dedication.</p>
+        </div>
+    </section>
+
     <script>
         // Typing animation
         const typingElement = document.getElementById('typingText');
@@ -1265,3 +1269,4 @@
         window.addEventListener('load', () => {
             revealElements();
         });
+ 
